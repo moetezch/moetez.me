@@ -1,5 +1,8 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import "materialize-css/dist/css/materialize.css"
+import "jquery/dist/jquery.js"
+import "materialize-css/dist/js/materialize.js"
 
 const IndexPage = () => (
   <div>

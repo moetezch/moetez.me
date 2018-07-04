@@ -4,17 +4,18 @@ import Helmet from 'react-helmet'
 
 import Header from '../components/header'
 import './index.css'
+import MainMenu from '../components/menu/MainMenu';
 
 const Layout = ({ children, data }) => (
   <div>
     <Helmet
-      title={data.site.siteMetadata.title}
+      title={data.SiteTitleQuery.siteMetadata.title}
       meta={[
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Header siteTitle={data.site.siteMetadata.title} />
+    <Header siteTitle={data.SiteTitleQuery.siteMetadata.title} />
     <div
       style={{
         margin: '0 auto',
@@ -23,6 +24,7 @@ const Layout = ({ children, data }) => (
         paddingTop: 0,
       }}
     >
+      <MainMenu menu={data}/>
       {children()}
     </div>
   </div>
@@ -36,10 +38,25 @@ export default Layout
 
 export const query = graphql`
   query SiteTitleQuery {
-    site {
+    SiteTitleQuery :site {
       siteMetadata {
         title
       }
+    }
+  
+
+    LayoutQuery:  allWordpressWpApiMenusMenusItems{
+        edges{
+            node{
+                id
+                name
+                items{
+                    title
+                    url
+                    object_slug
+                }
+            }
+        }
     }
   }
 `
