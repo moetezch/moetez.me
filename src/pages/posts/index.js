@@ -9,8 +9,7 @@ class PostsTemplate extends Component {
 
         return(
             <div>
-                <h1>Posts</h1>
-
+                <h1>Articles</h1>
                 {data.allWordpressPost.edges.map(({node}) => (
                     <div key={node.slug} className={"post"} style={{ marginBottom: 50 }}>
                     {node.featured_media && node.featured_media.localFile.childImageSharp.resolutions &&

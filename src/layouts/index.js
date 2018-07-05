@@ -3,8 +3,10 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Header from '../components/header'
-import './index.css'
-import MainMenu from '../components/menu/MainMenu';
+import Footer from '../components/footer'
+//import './index.css'
+import './index.scss'
+import 'font-awesome/css/font-awesome.min.css';
 
 const Layout = ({ children, data }) => (
   <div>
@@ -24,9 +26,9 @@ const Layout = ({ children, data }) => (
         paddingTop: 0,
       }}
     >
-      <MainMenu menu={data}/>
       {children()}
     </div>
+    <Footer/>
   </div>
 )
 
