@@ -16,8 +16,8 @@
     "gatsby-plugin-sharp": "^1.6.48",
     "gatsby-source-wordpress": "^2.0.93",
     "gatsby-transformer-sharp": "^1.6.27",
-    "materialize-css": "^0.100.2",
     "react-bulma-components": "^1.5.0",
+    "react-flip-move": "^3.0.2",
     "react-fontawesome": "^1.6.1",
     "react-helmet": "^5.2.0"
   },

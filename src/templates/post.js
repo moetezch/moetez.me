@@ -6,11 +6,8 @@ class PostTemplate extends Component {
     render() {
         const post = this.props.data.wordpressPost
         const resolutions = post.featured_media.localFile.childImageSharp.resolutions
-
-
-console.log(resolutions)
         return (
-            <div>
+            <div className="content has-text-centered container">
                 <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
                 {resolutions &&
                     <div>

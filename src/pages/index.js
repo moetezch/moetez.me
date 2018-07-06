@@ -1,28 +1,22 @@
 import React from 'react'
-import Link from 'gatsby-link'
-
-
+import svg from "../images/icons8-source-code-96.png"
 
 const IndexPage = () => (
-  <div>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
+  
+  <header>
+  <section className="header-content">
+  <img className="rocky-dashed animate-pop-in" src={svg}/>
+  <h1 className="header-title animate-pop-in">Moetez Chaabene</h1>
+  <h3 className="header-subtitle animate-pop-in">The Road Of 1000 Miles Starts With One Step</h3>
+  <p className="header-button animate-pop-in"><a href="#" className="button">Get started today</a></p>
+</section>
 
-    <section className="hero">
-    <div className="hero-body">
-      <div className="container">
-        <h1 className="title">
-          Hero title
-        </h1>
-        <h2 className="subtitle">
-          Hero subtitle
-        </h2>
-      </div>
-    </div>
-  </section>
-  </div>
+  </header>
+  
 )
 
 export default IndexPage
+//<div className="has-text-centered">
+// <h2>The Road Of 1000 Miles Starts With One Step</h2>
+//   <img src="https://pbs.twimg.com/profile_banners/171149655/1514883486/1500x500" alt="progress" style={{width:'100%'}}/>
+//</div>

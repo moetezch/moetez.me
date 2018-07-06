@@ -7,22 +7,24 @@ class PostsTemplate extends Component {
     render() {
         const data = this.props.data
 
-        return(
-            <div>
+        return (
+            <div className="has-text-centered container">
                 <h1>Articles</h1>
-                {data.allWordpressPost.edges.map(({node}) => (
+                {data.allWordpressPost.edges.map(({ node }) => (
                     <div key={node.slug} className={"post"} style={{ marginBottom: 50 }}>
-                    {node.featured_media && node.featured_media.localFile.childImageSharp.resolutions &&
-                        <Img resolutions={node.featured_media.localFile.childImageSharp.resolutions}></Img>
-                    }
-                    
+                        
                         <Link to={'/post/' + node.slug}>
                             <h3>{node.title}</h3>
                         </Link>
-
-                        <div className={"post-content"} dangerouslySetInnerHTML={{__html: node.excerpt}} />
-
                         {node.date}
+                        {node.featured_media && node.featured_media.localFile.childImageSharp.resolutions &&
+                            <Img resolutions={node.featured_media.localFile.childImageSharp.resolutions}></Img>
+                        }
+                        <div dangerouslySetInnerHTML={{ __html: node.excerpt.slice(0,150) }} />
+                        <Link className="button" to={'/post/' + node.slug} style={{marginTop:"0.3rem"}}>
+                        Continue Reading
+                        </Link>
+
                     </div>
                 ))}
 

@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
-        title: 'Moetez Chaabene : Aspiring Full Stack Web Developer',
-        subtitle: `Fetch Data From WP website`,
+        title: 'moetez.me | The blog of Moetez Chaabene | Tunisian Web Developer',
+        subtitle: ``,
     },
     plugins: [
         'gatsby-plugin-react-helmet',
@@ -23,7 +23,7 @@ module.exports = {
                 hostingWPCOM: false,
                 useACF: false,
                 verboseOutput: true,
-                excludedRoutes: ["/akismet/**", "/jetpack/**", "/yoast/**", "/*/*/settings", "/contact-form-7/**"]
+                excludedRoutes: ["/akismet/**", "/yoast/**", "/*/*/settings", "/contact-form-7/**"]
             }
         }
     ],
