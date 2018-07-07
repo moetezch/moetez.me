@@ -5,11 +5,7 @@ const Contact = () => (
   <h2>Contact</h2>
   <p>Have a question or want to say Hi?</p>
   <br/>
-    <form
-      name="contact-form"
-      method="post"
-      netlify
-    >
+  <form name="contact" method="POST" data-netlify="true">
       <div className="field">
         <div className="control">
           <input className="input" type="text" placeholder="Your Name" name="name" />
