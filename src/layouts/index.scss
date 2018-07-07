@@ -1,5 +1,4 @@
 $variable-columns: false;
-
 @import "~bulma";
 h1{
   font-size: $size-1;
@@ -10,6 +9,11 @@ h2{
 h3{
   font-size:  $size-3 ;
 }
+.card {
+  height: 100%;
+}
+
+// animated home page 
 header {
   align-items: center;
   display: flex;
@@ -118,6 +122,3 @@ header:after {
   }
 }
 
-.card {
-  height: 100%;
-}

@@ -32,7 +32,7 @@ query currentPostQuery($id: String!) {
         featured_media{
             localFile{
                 childImageSharp{
-                    resolutions(width:500, height: 200){
+                    resolutions{
                         src
                         width
                         height

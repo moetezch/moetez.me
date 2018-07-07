@@ -1,18 +1,18 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import { Navbar } from 'react-bulma-components'
+import image from "../images/logo.png"
 
-
-const Header = ({ siteTitle }) => (
+const Header = () => (
 
   <Navbar style={{ height: '4rem' }} color="light">
     <Navbar.Brand >
       <Link to="/" className="navbar-item">
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7CmrsCeNTLuW8nUYDec9fivR6m-XREyhz33nCckN9UAsgohUy"
+          src={image}
           alt="Moetez Chaabene"
           width="150"
-          height="180"
+          height="28"
         />
       </Link>
       <Navbar.Burger />
@@ -22,7 +22,7 @@ const Header = ({ siteTitle }) => (
 
         <Link className="navbar-item" to="/about">
           <i className="fa fa-user " style={{ marginRight: '.25em',color:'#00d1b2' }}></i>
-          About
+          About Me
         </Link>
         <Link className="navbar-item" to="/projects">
           <i className="fa fa-briefcase " style={{ marginRight: '.25em',color:'#f26522' }}></i>
