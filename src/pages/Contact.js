@@ -3,12 +3,12 @@ import React from 'react'
 const Contact = () => (
   <div className="container">
   <h2>Contact</h2>
+  <p>Have a question or want to say Hi?</p>
+  <br/>
     <form
       name="contact-form"
       method="post"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-
+      netlify
     >
       <div className="field">
         <div className="control">
@@ -29,6 +29,7 @@ const Contact = () => (
           <textarea className="textarea" name="message"></textarea>
         </div>
       </div>
+      <div data-netlify-recaptcha></div>
       <div className="control">
         <button className="button is-primary">Send Message</button>
       </div>
