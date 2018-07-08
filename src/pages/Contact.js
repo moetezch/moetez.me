@@ -1,11 +1,15 @@
 import React from 'react'
 
 const Contact = () => (
-  <div className="container">
+  <div className="content container is-medium">
   <h2>Contact</h2>
-  <p>Have a question or want to say Hi?</p>
-  <br/>
-  <form name="contact" method="POST" data-netlify="true">
+  <p>You can get in touch anytime through</p>
+  <ul>
+    <li> <a href="mailto:contact@moetez.me"> <i className="fa fa-envelope"></i> contact[at]moetez.me</a> </li>
+    <li><a href="https://twitter.com/moetezch" target="_blanc"><i className="fa fa-twitter"></i> @moetezch</a></li>
+  </ul>
+  <p>Or use the form below</p>
+  <form name="contact" method="POST" data-netlify="true"  action="/message">
       <div className="field">
         <div className="control">
           <input className="input" type="text" placeholder="Your Name" name="name" />
@@ -31,6 +35,7 @@ const Contact = () => (
       </div>
 
     </form>
+    <br/>
   </div>
 )
 

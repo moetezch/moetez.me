@@ -5,8 +5,10 @@ import Img from "gatsby-image"
 class PostTemplate extends Component {
     render() {
         const post = this.props.data.wordpressPost
-        const resolutions = post.featured_media.localFile.childImageSharp.resolutions
-        return (
+        let resolutions
+        if (post.featured_media) {
+            resolutions = post.featured_media.localFile.childImageSharp.resolutions
+        }        return (
             <div className="content has-text-centered container">
                 <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
                 {resolutions &&

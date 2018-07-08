@@ -42,7 +42,7 @@ export default PostsTemplate
 
 export const pageQuery = graphql`
     query postsQuery{
-        allWordpressPost{
+        allWordpressPost(sort: { fields: [date], order: DESC}){
             edges{
                 node{
                     id
