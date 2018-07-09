@@ -1,7 +1,6 @@
 module.exports = {
     siteMetadata: {
-        title: 'moetez.me | The blog of Moetez Chaabene | Tunisian Web Developer',
-        subtitle: ``,
+        title: 'moetez.me | The blog of Moetez Chaabene | Tunisian Web Developer'
     },
     plugins: [
         'gatsby-plugin-react-helmet',

@@ -51,7 +51,6 @@ query currentProjectQuery($id: String!) {
     site {
         siteMetadata {
             title
-            subtitle
         }
     }
 }

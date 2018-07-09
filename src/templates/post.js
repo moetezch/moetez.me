@@ -46,7 +46,6 @@ query currentPostQuery($id: String!) {
     site {
         siteMetadata {
             title
-            subtitle
         }
     }
 }

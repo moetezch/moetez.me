@@ -19,11 +19,15 @@ class ProjectsTemplate extends Component {
                                         <Img resolutions={node.featured_media.localFile.childImageSharp.resolutions}></Img>
                                     }
                                 </figure>
+                                <div className="media-content has-text-centered">
+                                <p className="title is-4">{node.title}</p>
+                                <p className="subtitle is-6"><time>{node.date}</time></p>
+                              </div>
                             </div>
                             <div className="card-content">
                                 <div className="content">
                                     <p dangerouslySetInnerHTML={{ __html: node.excerpt }}></p>
-                                    <time>{node.date}</time>
+                                    
                                 </div>
                             </div>
                         </div>

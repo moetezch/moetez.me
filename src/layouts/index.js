@@ -36,20 +36,5 @@ export const query = graphql`
         title
       }
     }
-  
-
-    LayoutQuery:  allWordpressWpApiMenusMenusItems{
-        edges{
-            node{
-                id
-                name
-                items{
-                    title
-                    url
-                    object_slug
-                }
-            }
-        }
-    }
   }
 `
