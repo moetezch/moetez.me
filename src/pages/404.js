@@ -1,9 +1,16 @@
 import React from 'react'
-
+import Link from 'gatsby-link'
+import image from "../images/zoro.gif"
 const NotFoundPage = () => (
-  <div >
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+  <div className="content container is-medium has-text-centered">
+    <h1>404 NOT FOUND</h1>
+    <p>Ooops...It looks that you are lost</p>
+    <img src={image} alt="lost" style={{ width: '500px'}}/>
+  <br/>
+    <Link className="button is-primary" to="/">
+      <i className="fa fa-user fa-arrow-left" style={{ marginRight: '.25em'}}></i>
+       Go to Homepage
+    </Link>
   </div>
 )
 

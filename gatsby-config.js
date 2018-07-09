@@ -16,7 +16,7 @@ module.exports = {
         {
             resolve: "gatsby-source-wordpress",
             options: {
-                baseUrl: "moetez.me",
+                baseUrl: "api.moetez.me",
                 protocol: "http",
                 perPage: 100,
                 concurrentRequests: 10,
