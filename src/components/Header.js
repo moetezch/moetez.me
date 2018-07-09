@@ -44,7 +44,7 @@ const Header = () => (
               <i className="fa fa-star" style={{ marginRight: '.25em', color: '#ff3860 ' }}></i>
               Certificates
       </Link>
-            <a className="navbar-item" href="http://moetez.me/resume" target='_blanc'>
+            <a className="navbar-item" href="http://api.moetez.me/resume.pdf" target='_blanc'>
               <i className="fa fa-file" style={{ marginRight: '.25em', color: '#4c4c4c' }}></i>
               Resume
       </a>

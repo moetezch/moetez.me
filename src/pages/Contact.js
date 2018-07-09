@@ -9,7 +9,8 @@ const Contact = () => (
     <li><a href="https://twitter.com/moetezch" target="_blanc"><i className="fa fa-twitter"></i> @moetezch</a></li>
   </ul>
   <p>Or use the form below</p>
-  <form name="contact" method="POST" data-netlify="true"  action="/message">
+  <form name="contact" method="POST" data-netlify="true" action="/message" data-netlify-honeypot="bot-field">
+  <input type="hidden" name="bot-field" />
       <div className="field">
         <div className="control">
           <input className="input" type="text" placeholder="Your Name" name="name" />
@@ -29,7 +30,6 @@ const Contact = () => (
           <textarea className="textarea" name="message"></textarea>
         </div>
       </div>
-      <div data-netlify-recaptcha></div>
       <div className="control">
         <button className="button is-primary">Send Message</button>
       </div>
