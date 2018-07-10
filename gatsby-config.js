@@ -24,6 +24,12 @@ module.exports = {
                 verboseOutput: true,
                 excludedRoutes: ["/akismet/**", "/yoast/**", "/*/*/settings", "/contact-form-7/**"]
             }
-        }
+        },
+        {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-122171355-1",
+      }
+    }
     ],
 };

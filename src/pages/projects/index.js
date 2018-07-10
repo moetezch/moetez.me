@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import Link from "gatsby-link"
 import PropTypes from "prop-types"
 import Img from "gatsby-image"
-import FlipMove from 'react-flip-move'
 
 class ProjectsTemplate extends Component {
     
@@ -61,7 +60,7 @@ export default ProjectsTemplate
 
 export const pageQuery = graphql`
     query projectsQuery{
-      allWordpressWpJetpackPortfolio{
+      allWordpressWpJetpackPortfolio(sort: { fields: [date], order: DESC}){
             edges{
                 node{
                     id
