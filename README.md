@@ -3,6 +3,7 @@ A headless wordpress website using Gatsbyjs
 
 ## Tech Stack
 * Gatsby
+* Bulma
 * Wordpress
 
 

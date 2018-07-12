@@ -11,11 +11,11 @@ class ProjectsTemplate extends Component {
             data.allWordpressWpJetpackPortfolio.edges.map(({ node }) => (
                 <div className="column is-one-third" key={node.slug}>
                     <Link to={'/project/' + node.slug}>
-                        <div className="card">
+                        <div className="card " >
                             <div className="card-image">
-                                <figure className="image ">
-                                    {node.featured_media && node.featured_media.localFile.childImageSharp.resolutions &&
-                                        <Img resolutions={node.featured_media.localFile.childImageSharp.resolutions}></Img>
+                                <figure className="image">
+                                    {node.featured_media && node.featured_media.localFile.childImageSharp.sizes &&
+                                        <Img sizes={node.featured_media.localFile.childImageSharp.sizes}></Img>
                                     }
                                 </figure>
                                 <div className="media-content has-text-centered">
@@ -71,11 +71,10 @@ export const pageQuery = graphql`
                     featured_media{
                         localFile{
                             childImageSharp{
-                                resolutions(width:500, height: 200){
+                                sizes(maxWidth: 350, maxHeight: 300){
                                     src
-                                    width
-                                    height
-                                }
+                                    ...GatsbyImageSharpSizes
+                                  }
                             }
                         }
                     }
