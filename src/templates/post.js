@@ -3,6 +3,7 @@ import Img from "gatsby-image"
 import SocialShare from '../components/SocialShare'
 class PostTemplate extends Component {
     render() {
+
         const post = this.props.data.wordpressPost
         let resolutions
         if (post.featured_media) {
@@ -22,7 +23,7 @@ class PostTemplate extends Component {
 
                 <div dangerouslySetInnerHTML={{ __html: post.content }} />
                 <div >
-                <SocialShare title={this.props.data.wordpressPost.title} url={this.props.data.site.siteMetadata.siteUrl + location.pathname}/>
+                <SocialShare title={this.props.data.wordpressPost.title} url={this.props.data.site.siteMetadata.siteUrl + this.props.location.pathname}/>
                 </div>
 
                 </div>
