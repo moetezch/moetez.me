@@ -17,9 +17,11 @@ h3{
 .card {
   height: 100%;
 }
+.is-active{
+  font-weight: bold;
+}
 
-
-// animated home page 
+// animated home page
 header {
   align-items: center;
   display: flex;
@@ -127,4 +129,3 @@ header:after {
     transform: rotateZ(-4deg);
   }
 }
-

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Footer = () => (
-  <div>
+  <div style={{marginTop:'100px'}}>
   <footer className="footer">
   <div className="content has-text-centered">
     <p>

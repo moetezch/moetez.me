@@ -7,7 +7,7 @@ const Header = () => (
 
   <Navbar style={{ height: '4rem' }} color="light">
     <Navbar.Brand >
-      <Link to="/" className="navbar-item">
+      <Link to="/" className="navbar-item" activeClassName="is-active"  exact>
         <img
           src={image}
           alt="Moetez Chaabene"
@@ -20,19 +20,19 @@ const Header = () => (
     <Navbar.Menu>
       <Navbar.Container >
 
-        <Link className="navbar-item" to="/about">
+        <Link className="navbar-item" to="/about" activeClassName="is-active">
           <i className="fa fa-user fa-lg" style={{ marginRight: '.25em', color: '#00d1b2' }}></i>
           About Me
       </Link>
-        <Link className="navbar-item" to="/posts">
+        <Link className="navbar-item" to="/posts" activeClassName="is-active">
           <i className="fa fa-book" style={{ marginRight: '.25em', color: '#0BB5FF' }}></i>
           Articles
     </Link>
-        <Link className="navbar-item" to="/projects">
+        <Link className="navbar-item" to="/projects" activeClassName="is-active">
           <i className="fa fa-briefcase" style={{ marginRight: '.25em', color: '#f26522' }}></i>
           Projects
       </Link>
-        <Link className="navbar-item" to="/contact">
+        <Link className="navbar-item" to="/contact" activeClassName="is-active">
           <i className="fa fa-envelope" style={{ marginRight: '.25em', color: '#ffd257' }}></i>
           Contact</Link>
         <div className="navbar-item has-dropdown is-hoverable">
@@ -40,7 +40,7 @@ const Header = () => (
             More
       </a>
           <div className="navbar-dropdown is-boxed">
-            <Link className="navbar-item" to="/certificates">
+            <Link className="navbar-item" to="/certificates" activeClassName="is-active">
               <i className="fa fa-star" style={{ marginRight: '.25em', color: '#ff3860 ' }}></i>
               Certificates
       </Link>

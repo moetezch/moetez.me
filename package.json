@@ -17,7 +17,8 @@
     "gatsby-source-wordpress": "^2.0.93",
     "gatsby-transformer-sharp": "^1.6.27",
     "react-bulma-components": "^1.5.0",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-share": "^2.3.1"
   },
   "keywords": [
     "gatsby"

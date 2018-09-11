@@ -1,23 +1,32 @@
 import React, { Component } from "react"
-import PropTypes from "prop-types"
 import Img from "gatsby-image"
-
+import SocialShare from '../components/SocialShare'
 class PostTemplate extends Component {
     render() {
         const post = this.props.data.wordpressPost
         let resolutions
         if (post.featured_media) {
             resolutions = post.featured_media.localFile.childImageSharp.resolutions
-        }        return (
+        } return (
+            <div>
+
             <div className="content has-text-centered container">
+
                 <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
                 {resolutions &&
                     <div>
-                        <Img resolutions={resolutions}/>
-                      
+                        <Img resolutions={resolutions} />
+
                     </div>
-}
+                }
+
                 <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                <div >
+                <SocialShare title={this.props.data.wordpressPost.title} url={this.props.data.site.siteMetadata.siteUrl + location.pathname}/>
+                </div>
+
+                </div>
+
             </div>
         )
     }
@@ -45,7 +54,8 @@ query currentPostQuery($id: String!) {
     }
     site {
         siteMetadata {
-            title
+            title,
+            siteUrl
         }
     }
 }
