@@ -11,5 +11,4 @@ A headless wordpress website using Gatsbyjs
 
 - [ ] Add categories and tags
 - [ ] Add search function
-- [ ] fix auto-close mobile menu on item click
 - [ ] Add pagination 
