@@ -8,7 +8,6 @@ class Header extends Component {
 
 
   render() {
-    console.log(this.state);
     return (
       <Navbar style={{ height: '4rem' }} color="light" active={this.state.open}>
         <Navbar.Brand >
