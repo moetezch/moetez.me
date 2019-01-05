@@ -1,7 +1,7 @@
 import React from 'react'
 import Recaptcha from "react-google-recaptcha";
 import { navigateTo } from "gatsby-link";
-const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
+const RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
 
 function encode(data) {
   return Object.keys(data)
@@ -52,6 +52,7 @@ export default class Contact extends React.Component {
           method="POST"
           data-netlify="true"
           action="/message"
+          data-netlify-honeypot="bot-field"
           data-netlify-recaptcha="true"
           onSubmit={this.handleSubmit}
         >
@@ -77,6 +78,7 @@ export default class Contact extends React.Component {
               <textarea className="textarea" name="message" onChange={this.handleChange}></textarea>
             </div>
           </div>
+
           <Recaptcha
             ref="recaptcha"
             sitekey={RECAPTCHA_KEY}
