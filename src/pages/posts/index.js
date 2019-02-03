@@ -9,21 +9,17 @@ class PostsTemplate extends Component {
 
         return (
             <div className="has-text-centered container">
-                <h1>Articles</h1>
                 {data.allWordpressPost.edges.map(({ node }) => (
-                    <div key={node.slug} className={"post"} style={{ marginBottom: 50 }}>
-                        
-                        <Link to={'/post/' + node.slug}>
+                    <div key={node.slug} className={"post"} style={{ marginBottom:'2rem', borderBottom:'1px solid' }}>
+                        <Link to={'/post/' + node.slug} style={{ color: 'black' }}>
                             <h3>{node.title}</h3>
+                            <small className='has-text-grey-light'>{node.date}</small>
+                            
+                            {node.featured_media && node.featured_media.localFile.childImageSharp.resolutions &&
+                                <Img resolutions={node.featured_media.localFile.childImageSharp.resolutions}></Img>
+                            }
                         </Link>
-                        {node.date}
-                        {node.featured_media && node.featured_media.localFile.childImageSharp.resolutions &&
-                            <Img resolutions={node.featured_media.localFile.childImageSharp.resolutions}></Img>
-                        }
-                        <div dangerouslySetInnerHTML={{ __html: node.excerpt.slice(0,150) }} />
-                        <Link className="button" to={'/post/' + node.slug} style={{marginTop:"0.3rem"}}>
-                        Continue Reading
-                        </Link>
+                        <div dangerouslySetInnerHTML={{ __html: node.excerpt.slice(0, 150) }}  style={{ marginBottom:'1.5rem'}}/>
 
                     </div>
                 ))}

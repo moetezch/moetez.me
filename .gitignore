@@ -7,3 +7,6 @@ yarn-error.log
 /public
 .DS_Store
 todo.md
+
+# Environment variables
+.env.development
