@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import Img from "gatsby-image"
 import SocialShare from '../components/SocialShare'
+import Layout from '../components/Layout'
+
 class PostTemplate extends Component {
     render() {
 
@@ -9,10 +11,8 @@ class PostTemplate extends Component {
         if (post.featured_media) {
             resolutions = post.featured_media.localFile.childImageSharp.resolutions
         } return (
-            <div>
-
+            <Layout>
             <div className="content has-text-centered container">
-
                 <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
                 {resolutions &&
                     <div>
@@ -20,15 +20,12 @@ class PostTemplate extends Component {
 
                     </div>
                 }
-
                 <div dangerouslySetInnerHTML={{ __html: post.content }} />
                 <div >
                 <SocialShare title={this.props.data.wordpressPost.title} url={this.props.data.site.siteMetadata.siteUrl + this.props.location.pathname}/>
                 </div>
-
                 </div>
-
-            </div>
+            </Layout>
         )
     }
 }
