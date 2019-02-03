@@ -13,11 +13,17 @@ class ProjectsTemplate extends Component {
             <div className="card-image">
               <figure className="image">
                 {node.featured_media &&
-                  node.featured_media.localFile.childImageSharp.sizes && (
+                  node.featured_media.localFile.childImageSharp.fluid && (
                     <Img
-                      sizes={
-                        node.featured_media.localFile.childImageSharp.sizes
+                      fluid={
+                        node.featured_media.localFile.childImageSharp.fluid
                       }
+                      style={{
+                        maxWidth:
+                          node.featured_media.localFile.childImageSharp.fluid
+                            .presentationWidth,
+                        margin: '0 auto',
+                      }}
                     />
                   )}
               </figure>
@@ -69,9 +75,9 @@ export const pageQuery = graphql`
           featured_media {
             localFile {
               childImageSharp {
-                sizes(maxWidth: 350, maxHeight: 300) {
-                  src
-                  ...GatsbyImageSharpSizes
+                fluid(maxWidth: 500) {
+                  ...GatsbyImageSharpFluid
+                  presentationWidth
                 }
               }
             }

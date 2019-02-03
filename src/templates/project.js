@@ -5,9 +5,9 @@ import Layout from '../components/Layout'
 class ProjectTemplate extends Component {
   render() {
     const project = this.props.data.wordpressWpJetpackPortfolio
-    let resolutions
+    let src
     if (project.featured_media) {
-      resolutions = project.featured_media.localFile.childImageSharp.resolutions
+      src = project.featured_media.localFile.childImageSharp.fluid
     }
 
     return (
@@ -15,9 +15,17 @@ class ProjectTemplate extends Component {
         <div className="content has-text-centered container">
           <p dangerouslySetInnerHTML={{ __html: project.date }} />
           <h1 dangerouslySetInnerHTML={{ __html: project.title }} />
-          {resolutions && (
+          {src && (
             <div>
-              <Img resolutions={resolutions} />
+              <Img
+                fluid={src}
+                style={{
+                  maxWidth:
+                    project.featured_media.localFile.childImageSharp.fluid
+                      .presentationWidth,
+                  margin: '0 auto',
+                }}
+              />
             </div>
           )}
           <div dangerouslySetInnerHTML={{ __html: project.content }} />
@@ -40,10 +48,9 @@ export const projectQuery = graphql`
       featured_media {
         localFile {
           childImageSharp {
-            resolutions {
-              src
-              width
-              height
+            fluid(maxWidth: 700) {
+              ...GatsbyImageSharpFluid
+              presentationWidth
             }
           }
         }

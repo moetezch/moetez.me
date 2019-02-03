@@ -20,12 +20,17 @@ class PostsTemplate extends Component {
                 <h3>{node.title}</h3>
                 <small className="has-text-grey-light">{node.date}</small>
                 {node.featured_media &&
-                  node.featured_media.localFile.childImageSharp.resolutions && (
+                  node.featured_media.localFile.childImageSharp.fluid && (
                     <Img
-                      resolutions={
-                        node.featured_media.localFile.childImageSharp
-                          .resolutions
+                      fluid={
+                        node.featured_media.localFile.childImageSharp.fluid
                       }
+                      style={{
+                        maxWidth:
+                          node.featured_media.localFile.childImageSharp.fluid
+                            .presentationWidth,
+                        margin: '0 auto',
+                      }}
                     />
                   )}
               </Link>
@@ -61,10 +66,9 @@ export const pageQuery = graphql`
           featured_media {
             localFile {
               childImageSharp {
-                resolutions(width: 500, height: 200) {
-                  src
-                  width
-                  height
+                fluid(maxWidth: 500) {
+                  ...GatsbyImageSharpFluid
+                  presentationWidth
                 }
               }
             }
