@@ -7,7 +7,6 @@ module.exports = {
         'gatsby-plugin-react-helmet',
         `gatsby-plugin-sharp`,
         'gatsby-transformer-sharp',
-        `gatsby-plugin-react-next`,
         {
             resolve: `gatsby-plugin-sass`,
             options: {
