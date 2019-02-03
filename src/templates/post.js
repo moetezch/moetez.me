@@ -6,17 +6,28 @@ import { graphql } from 'gatsby'
 class PostTemplate extends Component {
   render() {
     const post = this.props.data.wordpressPost
-    let resolutions
+    let src
     if (post.featured_media) {
-      resolutions = post.featured_media.localFile.childImageSharp.resolutions
+      src = post.featured_media.localFile.childImageSharp.fluid
+      console.log(
+        post.featured_media.localFile.childImageSharp.fluid.presentationWidth
+      )
     }
     return (
       <Layout>
         <div className="content has-text-centered container">
           <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-          {resolutions && (
+          {src && (
             <div>
-              <Img resolutions={resolutions} />
+              <Img
+                fluid={src}
+                style={{
+                  maxWidth:
+                    post.featured_media.localFile.childImageSharp.fluid
+                      .presentationWidth,
+                  margin: '0 auto',
+                }}
+              />
             </div>
           )}
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
@@ -45,10 +56,9 @@ export const pageQuery = graphql`
       featured_media {
         localFile {
           childImageSharp {
-            resolutions {
-              src
-              width
-              height
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid
+              presentationWidth
             }
           }
         }
