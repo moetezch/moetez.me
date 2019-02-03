@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Layout from '../components/Layout'
-
+import { graphql } from 'gatsby'
 class PageTemplate extends Component {
   render() {
     const currentPage = this.props.data.wordpressPage

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Img from 'gatsby-image'
-import { isNull } from 'util'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 class ProjectTemplate extends Component {
   render() {
