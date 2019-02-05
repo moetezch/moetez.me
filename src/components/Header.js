@@ -64,35 +64,6 @@ class Header extends Component {
               />
               Contact
             </Link>
-            <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link" href="#">
-                More
-              </a>
-              <div className="navbar-dropdown is-boxed">
-                <Link
-                  className="navbar-item"
-                  to="/certificates"
-                  activeClassName="is-active"
-                >
-                  <i
-                    className="fa fa-star"
-                    style={{ marginRight: '.25em', color: '#ff3860 ' }}
-                  />
-                  Certificates
-                </Link>
-                <a
-                  className="navbar-item"
-                  href="http://api.moetez.me/resume.pdf"
-                  target="_blanc"
-                >
-                  <i
-                    className="fa fa-file"
-                    style={{ marginRight: '.25em', color: '#4c4c4c' }}
-                  />
-                  Resume
-                </a>
-              </div>
-            </div>
           </Navbar.Container>
           <Navbar.Container position="end">
             <Navbar.Item href="https://twitter.com/moetezch" target="_blanc">
