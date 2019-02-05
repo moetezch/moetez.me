@@ -20,6 +20,7 @@ class PostsTemplate extends Component {
                 <h3>{node.title}</h3>
                 <small className="has-text-grey-light">{node.date}</small>
                 {node.featured_media &&
+                  node.featured_media.localFile &&
                   node.featured_media.localFile.childImageSharp.fluid && (
                     <Img
                       fluid={
