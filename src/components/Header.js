@@ -20,6 +20,7 @@ class Header extends Component {
           <Navbar.Burger
             active={this.state.open}
             onClick={() => this.setState({ open: !this.state.open })}
+            aria-label="menu"
           />
         </Navbar.Brand>
         <Navbar.Menu onClick={() => this.setState({ open: !this.state.open })}>
