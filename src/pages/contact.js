@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import Recaptcha from 'react-google-recaptcha'
 import { navigate } from 'gatsby'
+import SEO from '../components/seo'
 
 const RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
 
@@ -43,6 +44,7 @@ export default class Contact extends React.Component {
   render() {
     return (
       <Layout>
+        <SEO title={'Contact'} />
         <div className="content container is-medium">
           <p>You can get in touch anytime through</p>
           <ul>

@@ -2,8 +2,10 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Layout from '../components/Layout'
 import image from '../images/zoro.gif'
+import SEO from '../components/seo'
 const NotFoundPage = () => (
   <Layout>
+    <SEO title={'404 not found'} />
     <div className="content container is-medium has-text-centered">
       <h1>404 NOT FOUND</h1>
       <p>Ooops... It looks that you are lost</p>

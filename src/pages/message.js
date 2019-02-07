@@ -1,7 +1,9 @@
 import React from 'react'
 import Layout from '../components/Layout'
+import SEO from '../components/seo'
 const Message = () => (
   <Layout>
+    <SEO title="Thank you" keywords={[`email reply`]} />
     <div className="content has-text-centered is-medium">
       <br />
       <i

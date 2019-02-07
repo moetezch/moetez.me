@@ -3,18 +3,22 @@ import Img from 'gatsby-image'
 import SocialShare from '../components/SocialShare'
 import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
+import SEO from '../components/seo'
 class PostTemplate extends Component {
   render() {
     const post = this.props.data.wordpressPost
-    let src
+    let src, tags
     if (post.featured_media) {
       src = post.featured_media.localFile.childImageSharp.fluid
       console.log(
         post.featured_media.localFile.childImageSharp.fluid.presentationWidth
       )
     }
+    tags = post.tags.map(tag => tag.name)
+
     return (
       <Layout>
+        <SEO title={post.title} keywords={tags} />
         <div className="content has-text-centered container">
           <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
           {src && (
@@ -53,6 +57,9 @@ export const pageQuery = graphql`
     wordpressPost(id: { eq: $id }) {
       title
       content
+      tags {
+        name
+      }
       featured_media {
         localFile {
           childImageSharp {

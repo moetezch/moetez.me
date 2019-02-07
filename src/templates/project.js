@@ -2,16 +2,17 @@ import React, { Component } from 'react'
 import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import SEO from '../components/seo'
 class ProjectTemplate extends Component {
   render() {
     const project = this.props.data.wordpressWpJetpackPortfolio
-    let src
+    let src, tags
     if (project.featured_media) {
       src = project.featured_media.localFile.childImageSharp.fluid
     }
-
     return (
       <Layout>
+        <SEO title={project.title} keywords={tags} />
         <div className="content has-text-centered container">
           <p dangerouslySetInnerHTML={{ __html: project.date }} />
           <h1 dangerouslySetInnerHTML={{ __html: project.title }} />

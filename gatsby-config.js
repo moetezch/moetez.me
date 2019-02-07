@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'moetez.me | The blog of Moetez Chaabene | Tunisian Web Developer',
+    title: `The dev blog of a Tunisian Web Developer`,
+    description: `Hey, I’m Moetez, I write about web development`,
+    author: `@moetezch`,
     siteUrl: `https://www.moetez.me`,
   },
   plugins: [

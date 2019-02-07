@@ -2,9 +2,10 @@ import React from 'react'
 import img from '../images/icons8-source-code-96.png'
 import { Link } from 'gatsby'
 import Layout from '../components/Layout'
-
+import SEO from '../components/seo'
 const IndexPage = () => (
   <Layout>
+    <SEO title={'Home'} />
     <header>
       <section className="header-content">
         <img

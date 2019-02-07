@@ -3,12 +3,14 @@ import { Link, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import Layout from '../../components/Layout'
+import SEO from '../../components/seo'
 class PostsTemplate extends Component {
   render() {
     const data = this.props.data
 
     return (
       <Layout>
+        <SEO title={'Posts'} />
         <div className="has-text-centered container">
           {data.allWordpressPost.edges.map(({ node }) => (
             <div

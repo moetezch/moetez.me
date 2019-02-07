@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import Layout from '../../components/Layout'
+import SEO from '../../components/seo'
 class ProjectsTemplate extends Component {
   renderCard() {
     const data = this.props.data
@@ -47,6 +48,7 @@ class ProjectsTemplate extends Component {
   render() {
     return (
       <Layout>
+        <SEO title={'Projects'} />
         <div className=" has-text-centered container is-fluid ">
           <div className="columns is-multiline">{this.renderCard()}</div>
         </div>

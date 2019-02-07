@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
+import SEO from '../components/seo'
 class PageTemplate extends Component {
   render() {
     const currentPage = this.props.data.wordpressPage
     return (
       <Layout>
+        <SEO title={currentPage.title} />
         <div className="container">
           <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
         </div>
