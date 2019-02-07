@@ -6,9 +6,10 @@ module.exports = {
     siteUrl: `https://www.moetez.me`,
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
-    'gatsby-transformer-sharp',
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -23,7 +24,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-wordpress',
+      resolve: `gatsby-source-wordpress`,
       options: {
         baseUrl: 'api.moetez.me',
         protocol: 'http',
