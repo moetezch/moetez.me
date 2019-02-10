@@ -47,5 +47,20 @@ module.exports = {
         trackingId: 'UA-122171355-1',
       },
     },
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `The dev blog of a Tunisian Web Developer`,
+        short_name: `Tunisian Web Developer blog`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/ms-icon-310x310.png`,
+        include_favicon: true,
+      },
+    },
+    'gatsby-plugin-offline',
   ],
 }

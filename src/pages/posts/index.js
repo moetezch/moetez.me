@@ -6,13 +6,13 @@ import Layout from '../../components/Layout'
 import SEO from '../../components/seo'
 class PostsTemplate extends Component {
   render() {
-    const data = this.props.data
-
+    const posts = this.props.data.allWordpressPost
+    // let tags = posts.edges.node.tags.map(tag => tag.name)
     return (
       <Layout>
         <SEO title={'Posts'} />
         <div className="has-text-centered container">
-          {data.allWordpressPost.edges.map(({ node }) => (
+          {posts.edges.map(({ node }) => (
             <div
               key={node.slug}
               className={'post'}
@@ -50,7 +50,7 @@ class PostsTemplate extends Component {
 }
 
 PostsTemplate.propTypes = {
-  data: PropTypes.object.isRequired,
+  posts: PropTypes.object.isRequired,
   edges: PropTypes.array,
 }
 
@@ -66,6 +66,12 @@ export const pageQuery = graphql`
           excerpt
           slug
           date(formatString: "MMMM DD, YYYY")
+          tags {
+            name
+          }
+          categories {
+            name
+          }
           featured_media {
             localFile {
               childImageSharp {
