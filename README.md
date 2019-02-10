@@ -10,5 +10,4 @@ A headless wordpress website using Gatsbyjs
 
 ## To-do:
 
-- [ ] Add categories and tags
 - [ ] Add search function

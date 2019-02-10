@@ -5,9 +5,11 @@ import Img from 'gatsby-image'
 import Layout from '../../components/Layout'
 import SEO from '../../components/seo'
 class PostsTemplate extends Component {
+  showCategories(categories) {
+    return categories.map(category => category.name)
+  }
   render() {
     const posts = this.props.data.allWordpressPost
-    // let tags = posts.edges.node.tags.map(tag => tag.name)
     return (
       <Layout>
         <SEO title={'Posts'} />
@@ -20,7 +22,9 @@ class PostsTemplate extends Component {
             >
               <Link to={'/post/' + node.slug} style={{ color: 'black' }}>
                 <h3>{node.title}</h3>
-                <small className="has-text-grey-light">{node.date}</small>
+                <small className="has-text-grey">
+                  {node.date} - In {this.showCategories(node.categories)}
+                </small>
                 {node.featured_media &&
                   node.featured_media.localFile &&
                   node.featured_media.localFile.childImageSharp.fluid && (
@@ -66,9 +70,6 @@ export const pageQuery = graphql`
           excerpt
           slug
           date(formatString: "MMMM DD, YYYY")
-          tags {
-            name
-          }
           categories {
             name
           }

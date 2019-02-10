@@ -5,6 +5,9 @@ import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 class PostTemplate extends Component {
+  showCategories(categories) {
+    return categories.map(category => category.name)
+  }
   render() {
     const post = this.props.data.wordpressPost
     let src, tags
@@ -21,6 +24,9 @@ class PostTemplate extends Component {
         <SEO title={post.title} keywords={tags} />
         <div className="content has-text-centered container">
           <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
+          <small className="has-text-grey">
+            {post.date} - In {this.showCategories(post.categories)}
+          </small>
           {src && (
             <div>
               <Img
@@ -58,6 +64,10 @@ export const pageQuery = graphql`
       title
       content
       tags {
+        name
+      }
+      date(formatString: "MMMM DD, YYYY")
+      categories {
         name
       }
       featured_media {

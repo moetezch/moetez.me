@@ -27,6 +27,9 @@
     "react-helmet": "^5.2.0",
     "react-share": "^2.3.1"
   },
+  "resolutions": {
+    "ajv": "6.8.1"
+  },
   "keywords": [
     "gatsby"
   ],
