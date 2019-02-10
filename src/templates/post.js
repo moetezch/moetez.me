@@ -13,9 +13,6 @@ class PostTemplate extends Component {
     let src, tags
     if (post.featured_media) {
       src = post.featured_media.localFile.childImageSharp.fluid
-      console.log(
-        post.featured_media.localFile.childImageSharp.fluid.presentationWidth
-      )
     }
     tags = post.tags.map(tag => tag.name)
 
