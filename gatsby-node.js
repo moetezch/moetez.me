@@ -30,6 +30,12 @@ const postsQuery = `
         format
         title
         date
+        categories {
+          id
+          name
+          count
+          slug
+        }
       }
     }
   }
@@ -77,6 +83,7 @@ exports.createPages = ({ graphql, actions }) => {
         })
       })
       .then(() => {
+        // Projects
         graphql(projectsQuery).then(result => {
           if (result.errors) {
             console.log(result.errors)
@@ -96,6 +103,27 @@ exports.createPages = ({ graphql, actions }) => {
         })
       })
       .then(() => {
+        // categories
+        graphql(postsQuery).then(result => {
+          if (result.errors) {
+            console.log(result.errors)
+            reject(result.errors)
+          }
+          const categoryTemplate = path.resolve('./src/templates/category.js')
+
+          _.each(result.data.allWordpressPost.edges, edge => {
+            createPage({
+              path: `/category/${edge.node.categories[0].slug}/`,
+              component: slash(categoryTemplate),
+              context: {
+                id: edge.node.id,
+              },
+            })
+          })
+        })
+      })
+      .then(() => {
+        // Posts
         graphql(postsQuery).then(result => {
           if (result.errors) {
             console.log(result.errors)

@@ -22,9 +22,18 @@ class PostsTemplate extends Component {
             >
               <Link to={'/post/' + node.slug} style={{ color: 'black' }}>
                 <h3>{node.title}</h3>
-                <small className="has-text-grey">
-                  {node.date} - In {this.showCategories(node.categories)}
-                </small>
+              </Link>
+              <small className="has-text-grey">
+                {node.date} - In{' '}
+                <Link
+                  to={`/category/${this.showCategories(
+                    node.categories
+                  )[0].toLowerCase()}`}
+                >
+                  {this.showCategories(node.categories)}
+                </Link>
+              </small>
+              <Link to={'/post/' + node.slug}>
                 {node.featured_media &&
                   node.featured_media.localFile &&
                   node.featured_media.localFile.childImageSharp.fluid && (
@@ -54,7 +63,6 @@ class PostsTemplate extends Component {
 }
 
 PostsTemplate.propTypes = {
-  posts: PropTypes.object.isRequired,
   edges: PropTypes.array,
 }
 
