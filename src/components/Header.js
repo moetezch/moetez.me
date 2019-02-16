@@ -45,7 +45,7 @@ class Header extends Component {
                 className="fa fa-book"
                 style={{ marginRight: '.25em', color: '#0BB5FF' }}
               />
-              Articles
+              Blog
             </Link>
             <Link
               className="navbar-item"

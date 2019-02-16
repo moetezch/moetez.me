@@ -14,7 +14,6 @@ class ProjectTemplate extends Component {
       <Layout>
         <SEO title={project.title} keywords={tags} />
         <div className="content has-text-centered container">
-          <p dangerouslySetInnerHTML={{ __html: project.date }} />
           <h1 dangerouslySetInnerHTML={{ __html: project.title }} />
           {src && (
             <div>
@@ -43,7 +42,6 @@ export const projectQuery = graphql`
     wordpressWpJetpackPortfolio(id: { eq: $id }) {
       title
       content
-      date(formatString: "MMMM DD, YYYY")
       excerpt
       id
       featured_media {

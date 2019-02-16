@@ -30,9 +30,6 @@ class ProjectsTemplate extends Component {
               </figure>
               <div className="media-content has-text-centered">
                 <p className="title is-4">{node.title}</p>
-                <p className="subtitle is-6">
-                  <time>{node.date}</time>
-                </p>
               </div>
             </div>
             <div className="card-content">
