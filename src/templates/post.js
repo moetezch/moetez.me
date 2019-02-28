@@ -11,7 +11,11 @@ class PostTemplate extends Component {
   render() {
     const post = this.props.data.wordpressPost
     let src, tags
-    if (post.featured_media) {
+    if (
+      post.featured_media &&
+      post.featured_media.localFile &&
+      post.featured_media.localFile.childImageSharp
+    ) {
       src = post.featured_media.localFile.childImageSharp.fluid
     }
     tags = post.tags.map(tag => tag.name)
@@ -19,11 +23,14 @@ class PostTemplate extends Component {
     return (
       <Layout>
         <SEO title={post.title} keywords={tags} />
-        <div className="content has-text-centered container">
+        <div className="content container" style={{ width: '50%' }}>
           <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-          <small className="has-text-grey">
-            {post.date} - In {this.showCategories(post.categories)}
-          </small>
+          <div>
+            {' '}
+            <small className="has-text-grey">
+              {post.date} - In {this.showCategories(post.categories)}
+            </small>
+          </div>
           {src && (
             <div>
               <Img
@@ -32,7 +39,6 @@ class PostTemplate extends Component {
                   maxWidth:
                     post.featured_media.localFile.childImageSharp.fluid
                       .presentationWidth,
-                  margin: '0 auto',
                 }}
               />
             </div>
