@@ -10,7 +10,7 @@ class PostTemplate extends Component {
   }
   render() {
     const post = this.props.data.wordpressPost
-    let src, tags
+    let src, tags, cardImage
     if (
       post.featured_media &&
       post.featured_media.localFile &&
@@ -19,10 +19,18 @@ class PostTemplate extends Component {
       src = post.featured_media.localFile.childImageSharp.fluid
     }
     tags = post.tags.map(tag => tag.name)
-
+    if (src) {
+      // .substring(0) removes /
+      cardImage = src.src.substring(0)
+    }
     return (
       <Layout>
-        <SEO title={post.title} keywords={tags} />
+        <SEO
+          title={post.title}
+          keywords={tags}
+          description={post.excerpt.replace(/<(?:.|\n)*?>/gm, '')}
+          image={cardImage}
+        />
         <div className="content container" style={{ width: '50%' }}>
           <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
           <div>
@@ -80,6 +88,7 @@ export const pageQuery = graphql`
       categories {
         name
       }
+      excerpt
       featured_media {
         localFile {
           childImageSharp {
