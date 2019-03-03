@@ -53,7 +53,14 @@ class IndexPage extends React.Component {
                 <Link to={'/post/' + node.slug} style={{ color: 'black' }}>
                   <h3>{node.title}</h3>
                   <small className="has-text-grey">
-                    {node.date} - In {this.showCategories(node.categories)}
+                    {node.date} - In{' '}
+                    <Link
+                      to={`/category/${this.showCategories(
+                        node.categories
+                      )[0].toLowerCase()}`}
+                    >
+                      {this.showCategories(node.categories)}
+                    </Link>
                   </small>
                   {node.featured_media &&
                     node.featured_media.localFile &&

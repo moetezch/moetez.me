@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Img from 'gatsby-image'
 import SocialShare from '../components/SocialShare'
 import Layout from '../components/Layout'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import SEO from '../components/seo'
 class PostTemplate extends Component {
   showCategories(categories) {
@@ -28,7 +28,14 @@ class PostTemplate extends Component {
           <div>
             {' '}
             <small className="has-text-grey">
-              {post.date} - In {this.showCategories(post.categories)}
+              {post.date} - In{' '}
+              <Link
+                to={`/category/${this.showCategories(
+                  post.categories
+                )[0].toLowerCase()}`}
+              >
+                {this.showCategories(post.categories)}
+              </Link>
             </small>
           </div>
           {src && (
