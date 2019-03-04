@@ -57,7 +57,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/ms-icon-310x310.png`,
+        icon: `src/images/moetez_icon.png`,
         include_favicon: true,
       },
     },
