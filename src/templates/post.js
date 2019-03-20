@@ -4,7 +4,13 @@ import SocialShare from '../components/SocialShare'
 import Layout from '../components/Layout'
 import { Link, graphql } from 'gatsby'
 import SEO from '../components/seo'
+import Prism from 'prismjs'
+import '../../node_modules/prismjs/plugins/custom-class/prism-custom-class'
 class PostTemplate extends Component {
+  componentDidMount() {
+    Prism.plugins.customClass.prefix('prism--')
+    Prism.highlightAll()
+  }
   showCategories(categories) {
     return categories.map(category => category.name)
   }

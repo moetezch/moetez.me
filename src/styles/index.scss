@@ -1,6 +1,8 @@
 $variable-columns: false;
 @import '~bulma';
 @import '~bulma/sass/utilities/initial-variables.sass';
+@import 'prism-okaidia.css';
+
 .navbar-item img {
   max-height: 2.625rem;
 }
@@ -16,4 +18,7 @@ h3 {
 }
 .card {
   height: 100%;
+}
+
+.numberCode {
 }
