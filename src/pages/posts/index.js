@@ -14,6 +14,7 @@ class PostsTemplate extends Component {
       <Layout>
         <SEO title={'Posts'} />
         <div className="has-text-centered container">
+          <p className="is-size-2">I learn.then(write to remember) </p>
           {posts.edges.map(({ node }) => (
             <div
               key={node.slug}

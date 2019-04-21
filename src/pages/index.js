@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import Img from 'gatsby-image'
+import Card from '../commun/card'
 class IndexPage extends React.Component {
   showCategories(categories) {
     return categories.map(category => category.name)
@@ -42,50 +42,13 @@ class IndexPage extends React.Component {
               </span>
             </p>
           </div>
-          <h3>Latest Posts</h3>
-          <div className="has-text-centered container">
-            {posts.edges.map(({ node }) => (
-              <div
-                key={node.slug}
-                className={'post'}
-                style={{ marginBottom: '2rem', borderBottom: '1px solid' }}
-              >
-                <Link to={'/post/' + node.slug} style={{ color: 'black' }}>
-                  <h3>{node.title}</h3>
-                  <small className="has-text-grey">
-                    {node.date} - In{' '}
-                    <Link
-                      to={`/category/${this.showCategories(
-                        node.categories
-                      )[0].toLowerCase()}`}
-                    >
-                      {this.showCategories(node.categories)}
-                    </Link>
-                  </small>
-                  {node.featured_media &&
-                    node.featured_media.localFile &&
-                    node.featured_media.localFile.childImageSharp.fluid && (
-                      <Img
-                        fluid={
-                          node.featured_media.localFile.childImageSharp.fluid
-                        }
-                        style={{
-                          maxWidth:
-                            node.featured_media.localFile.childImageSharp.fluid
-                              .presentationWidth,
-                          margin: '0 auto',
-                        }}
-                      />
-                    )}
-                </Link>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: node.excerpt.slice(0, 150),
-                  }}
-                  style={{ marginBottom: '1.5rem' }}
-                />
-              </div>
-            ))}
+          <h3>Latest articles</h3>
+          <div className="">
+            <div className="columns features">
+              {posts.edges.map(({ node }) => (
+                <Card post={node} key={node.slug} />
+              ))}
+            </div>
           </div>
         </div>
       </Layout>
