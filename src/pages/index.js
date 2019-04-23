@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import Card from '../commun/card'
+import Card from '../common/card'
 class IndexPage extends React.Component {
   showCategories(categories) {
     return categories.map(category => category.name)
@@ -46,7 +46,7 @@ class IndexPage extends React.Component {
           <div className="">
             <div className="columns features">
               {posts.edges.map(({ node }) => (
-                <Card post={node} key={node.slug} />
+                <Card node={node} key={node.slug} type="post" />
               ))}
             </div>
           </div>
