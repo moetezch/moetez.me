@@ -37,7 +37,7 @@ class PostTemplate extends Component {
           description={post.excerpt.replace(/<(?:.|\n)*?>/gm, '')}
           image={cardImage}
         />
-        <div className="content container" style={{ width: '50%' }}>
+        <div className="content container" id="postContent">
           <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
           <div>
             {' '}
@@ -54,14 +54,7 @@ class PostTemplate extends Component {
           </div>
           {src && (
             <div>
-              <Img
-                fluid={src}
-                style={{
-                  maxWidth:
-                    post.featured_media.localFile.childImageSharp.fluid
-                      .presentationWidth,
-                }}
-              />
+              <Img fluid={src} style={{ maxWidth: src.presentationWidth }} />
             </div>
           )}
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
