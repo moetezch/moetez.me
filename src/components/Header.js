@@ -8,11 +8,7 @@ class Header extends Component {
 
   render() {
     return (
-      <Navbar
-        style={{ height: '4rem', marginBottom: '1.5rem' }}
-        color="light"
-        active={this.state.open}
-      >
+      <Navbar color="light" active={this.state.open}>
         <Navbar.Brand>
           <Link to="/" className="navbar-item">
             <img src={image} alt="Moetez Chaabene" width="150" height="64" />
