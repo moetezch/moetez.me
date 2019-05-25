@@ -13,10 +13,7 @@ class IndexPage extends React.Component {
       <Layout>
         <SEO title={'Home'} />
         <div className="has-text-centered container">
-          <div
-            style={{ marginTop: '5rem', marginBottom: '5rem' }}
-            className="hero"
-          >
+          <div style={{ marginBottom: '5rem' }} className="hero">
             <p className="is-size-1 bold">
               Hi.{' '}
               <span role="img" aria-label="hands">

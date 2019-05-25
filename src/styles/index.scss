@@ -3,6 +3,62 @@ $variable-columns: false;
 @import '~bulma/sass/utilities/initial-variables.sass';
 @import 'prism-okaidia.css';
 
+body {
+  --anchorLink: #3273dc;
+  --navbarBackground: whitesmoke;
+  --navbarColor: #363636;
+  --bg: #ffffff;
+  --textColor: #222;
+  --inlineCode-bg: #f0da4f33;
+  --inlineCode-text: inherit;
+  --boxShadow1: rgba(0, 0, 0, 0.13);
+  --boxShadow2: rgba(0, 0, 0, 0.19);
+  background-color: var(--bg);
+}
+
+body.dark {
+  -webkit-font-smoothing: antialiased;
+  --anchorLink: #f0da4f;
+  --navbarBackground: #000008;
+  --navbarColor: white;
+  --bg: #000008;
+  --textColor: white;
+  --boxShadow1: rgba(249, 251, 82, 0.13);
+  --boxShadow2: rgba(232, 248, 85, 0.19);
+}
+.content blockquote {
+  background-color: var(--navbarBackground);
+}
+.content h1,
+.content h2,
+.content h3,
+.content li {
+  color: var(--textColor);
+}
+p,
+h1,
+h2,
+h3,
+.label {
+  color: var(--textColor);
+}
+a {
+  color: var(--anchorLink);
+}
+.navbar {
+  color: var(--navbarColor);
+  background-color: var(--navbarBackground);
+}
+.footer {
+  color: var(--navbarColor);
+  background-color: var(--navbarBackground);
+}
+.navbar-menu.is-active {
+  background-color: var(--navbarBackground);
+}
+.navbar-burger {
+  color: var(--navbarColor);
+}
 .navbar-item img {
   max-height: 2.625rem;
 }
@@ -10,6 +66,7 @@ $variable-columns: false;
 h1 {
   font-size: $size-1;
 }
+
 h2 {
   font-size: $size-2;
 }
@@ -30,7 +87,7 @@ h3 {
   transition: all 0.2s ease-in-out;
 }
 .is-shady:hover {
-  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.13), 0 6px 6px rgba(0, 0, 0, 0.19);
+  box-shadow: 0 10px 16px var(--boxShadow1), 0 6px 6px var(--boxShadow2);
 }
 .features {
   padding: 5rem 0;
@@ -55,7 +112,7 @@ h3 {
   font-weight: 700;
 }
 .card {
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+  box-shadow: 0px 2px 4px var(--boxShadow2);
   margin-bottom: 2rem;
 }
 
@@ -69,4 +126,8 @@ h3 {
   #postContent {
     width: 50%;
   }
+}
+
+a.navbar-item:hover {
+  color: unset;
 }

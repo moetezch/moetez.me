@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 export default function Card({ node, type }) {
@@ -29,8 +29,9 @@ export default function Card({ node, type }) {
             <div className="content">
               <h4>{node.title}</h4>
               <p
+                style={{ color: '#222' }}
                 dangerouslySetInnerHTML={{
-                  __html: node.excerpt,
+                  __html: node.excerpt.replace(/<(?:.|\n)*?>/gm, ''),
                 }}
               />
             </div>
