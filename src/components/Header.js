@@ -9,7 +9,7 @@ class Header extends Component {
   state = { open: false, logo: darkImage }
   componentDidMount() {
     const theme = localStorage.getItem('theme')
-    const logoImage = theme === 'light' ? darkImage : lightImage
+    const logoImage = !theme || theme === 'light' ? darkImage : lightImage
     this.setState({ logo: logoImage })
   }
   handleThemeSwitch(theme) {
