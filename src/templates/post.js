@@ -17,6 +17,9 @@ class PostTemplate extends Component {
   showCategories(categories) {
     return categories.map(category => category.name)
   }
+  renderTags(tags) {
+    return tags.map(tag => <span class="tag is-info">{tag.name}</span>)
+  }
   render() {
     const post = this.props.data.wordpressPost
     let src, tags, cardImage
@@ -66,6 +69,12 @@ class PostTemplate extends Component {
             </div>
           )}
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          <div className="tags are-large">
+            <span className="tag is-large">
+              <i class="fa fa-tags" aria-hidden="true" />
+            </span>
+            {this.renderTags(post.tags)}
+          </div>
           <div>
             <SocialShare
               title={this.props.data.wordpressPost.title}
