@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
-import Img from 'gatsby-image'
 import Layout from '../../components/Layout'
 import SEO from '../../components/seo'
 class CategoriesTemplate extends Component {

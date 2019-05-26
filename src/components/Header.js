@@ -24,7 +24,6 @@ class Header extends Component {
             <img src={this.state.logo} alt="Moetez Chaabene" height="64" />
           </Link>
           <Navbar.Burger
-            active={this.state.open}
             onClick={() => this.setState({ open: !this.state.open })}
             aria-label="menu"
           />
