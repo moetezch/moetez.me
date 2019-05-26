@@ -4,6 +4,7 @@ import SocialShare from '../components/SocialShare'
 import Layout from '../components/Layout'
 import { Link, graphql } from 'gatsby'
 import SEO from '../components/seo'
+import CategoryIcon from '../common/CategoryIcon'
 import Prism from 'prismjs'
 import '../../node_modules/prismjs/plugins/custom-class/prism-custom-class'
 require('prismjs/components/prism-jsx')
@@ -44,15 +45,20 @@ class PostTemplate extends Component {
           <div>
             {' '}
             <small className="has-text-grey">
-              {post.date} - In{' '}
-              <Link
-                to={`/category/${this.showCategories(
-                  post.categories
-                )[0].toLowerCase()}`}
-              >
-                {this.showCategories(post.categories)}
-              </Link>
+              {post.date} {'  '}
             </small>
+            <Link
+              className="has-text-weight-semibold"
+              to={`/category/${this.showCategories(
+                post.categories
+              )[0].toLowerCase()}`}
+            >
+              <CategoryIcon
+                iconName={this.showCategories(post.categories)[0].toLowerCase()}
+              />
+              {'  '}
+              {this.showCategories(post.categories)}
+            </Link>
           </div>
           {src && (
             <div>

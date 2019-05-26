@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import Layout from '../../components/Layout'
 import SEO from '../../components/seo'
+import CategoryIcon from '../../common/CategoryIcon'
 class PostsTemplate extends Component {
   showCategories(categories) {
     return categories.map(category => category.name)
@@ -25,15 +26,22 @@ class PostsTemplate extends Component {
                 <h3>{node.title}</h3>
               </Link>
               <small className="has-text-grey">
-                {node.date} - In{' '}
-                <Link
-                  to={`/category/${this.showCategories(
-                    node.categories
-                  )[0].toLowerCase()}`}
-                >
-                  {this.showCategories(node.categories)}
-                </Link>
+                {node.date} {'  '}
               </small>
+              <Link
+                className="has-text-weight-semibold"
+                to={`/category/${this.showCategories(
+                  node.categories
+                )[0].toLowerCase()}`}
+              >
+                <CategoryIcon
+                  iconName={this.showCategories(
+                    node.categories
+                  )[0].toLowerCase()}
+                />
+                {'  '}
+                {this.showCategories(node.categories)}
+              </Link>
               <Link to={'/post/' + node.slug}>
                 {node.featured_media &&
                   node.featured_media.localFile &&
