@@ -64,5 +64,17 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-dark-mode`,
+    /**
+     * Netlify 301 redirects on URLs with no trailing slashes == negative seo impact
+     * https://github.com/gatsbyjs/gatsby/issues/9207
+     * ! still experimenting
+     */
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: `https://www.moetez.me`,
+        noTrailingSlash: true,
+      },
+    },
   ],
 }
