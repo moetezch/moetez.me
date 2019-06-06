@@ -66,10 +66,11 @@ export default class Contact extends React.Component {
                   'Content-Type': 'application/x-www-form-urlencoded',
                 },
                 body: encode({
-                  'form-name': values.name,
+                  'form-name': 'contact',
                   name: values.name,
                   email: values.email,
                   message: values.message,
+                  'g-recaptcha-response': values.recaptcha,
                 }),
               })
                 .then(() => navigate('/message'))
