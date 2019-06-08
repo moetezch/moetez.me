@@ -3,6 +3,9 @@ $variable-columns: false;
 @import '~bulma/sass/utilities/initial-variables.sass';
 @import 'prism-okaidia.css';
 
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+$body-family: 'Nunito', sans-serif;
+
 body {
   --anchorLink: #222;
   --navbarBackground: whitesmoke;
@@ -28,6 +31,10 @@ body.dark {
 }
 .content blockquote {
   background-color: var(--navbarBackground);
+}
+.content {
+  font-family: $body-family;
+  font-size: 20px;
 }
 .content h1,
 .content h2,

@@ -18,7 +18,11 @@ class PostTemplate extends Component {
     return categories.map(category => category.name)
   }
   renderTags(tags) {
-    return tags.map(tag => <span class="tag is-info">{tag.name}</span>)
+    return tags.map(tag => (
+      <span key={tag.name} className="tag is-info">
+        {tag.name}
+      </span>
+    ))
   }
   render() {
     const post = this.props.data.wordpressPost
@@ -71,7 +75,7 @@ class PostTemplate extends Component {
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
           <div className="tags are-large">
             <span className="tag is-large">
-              <i class="fa fa-tags" aria-hidden="true" />
+              <i className="fa fa-tags" aria-hidden="true" />
             </span>
             {this.renderTags(post.tags)}
           </div>
