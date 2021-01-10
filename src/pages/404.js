@@ -8,7 +8,7 @@ const NotFoundPage = () => (
     <SEO title={'404 not found'} />
     <div className="content container is-medium has-text-centered">
       <h1>404 NOT FOUND</h1>
-      <p>Ooops... It looks that you are losts</p>
+      <p>Ooops... It looks that you are lost</p>
       <img src={image} alt="lost" style={{ width: '500px' }} />
       <br />
       <Link className="button is-primary" to="/">
