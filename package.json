@@ -24,7 +24,7 @@
     "gatsby-source-filesystem": "^2.1.40",
     "gatsby-source-wordpress": "^3.1.51",
     "gatsby-transformer-sharp": "^2.3.7",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "prismjs": "^1.17.1",
     "react": "^16.12.0",
     "react-bulma-components": "^2.3.0",
